@@ -1,0 +1,416 @@
+@import '../abstracts/utilities';
+
+.solucoes {
+    display: flex;
+    margin: 10.3rem auto;
+
+    @include max (900) {
+        flex-direction: column;
+        gap: 5rem;
+    }
+
+    &__heading {
+        padding: 1.4rem 4.6rem;
+        border-radius: 5rem 0 0 5rem;
+        font-size: 3rem;
+        font-weight: 800;
+        line-height: 4rem;
+        text-transform: uppercase;
+        color: #fff;
+
+        @include max (900) {
+            border-radius: 5rem;
+        }
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        margin-top: 2.5rem;
+        width: 100%;
+
+        @include max (900) {
+            gap: 3rem;
+        }
+    
+        article {
+            max-width: 58.4rem;
+            width: 100%;
+            font-size: 1.4rem;
+            font-weight: 500;
+            line-height: 2.4rem;
+            margin: auto auto auto 2.7rem;
+
+            @include max (900) {
+                max-width: 100%;
+                margin: 0;
+            }
+        
+            strong {
+                font-size: 1.6rem;
+            }
+        
+            ul {margin-left: 3rem;}
+        }
+    }
+
+    &__figure {
+        max-width: 40rem;
+        width: 100%;
+        height: 100%;
+        aspect-ratio: 40/63;
+        border-radius: 4rem;
+        overflow: hidden;
+
+        @include max (900) {
+            max-width: 100%;
+            aspect-ratio: 1;
+        }
+    
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+}
+
+.objetivos {
+    display: flex;
+    flex-direction: column;
+    gap: 7rem;
+    margin-bottom: 16.9rem;
+
+    &__selector {
+        display: flex;   
+        flex-direction: column;
+        gap: 8rem;
+    }
+
+    &__head {
+        display: flex;
+        flex-direction: column;
+        gap: 2.6rem;
+    
+        &-heading {
+            display: flex;
+            gap: .1rem;
+
+            @include max (900) {
+                flex-direction: column;
+            }
+        }
+    
+        &-tab {
+            display: flex;
+            flex: 1;
+            padding: 2.8rem 3rem;
+            border-radius: 3rem 3rem 0 0;
+            font-size: 1.8rem;
+            font-weight: 800;
+            line-height: 2.2rem;
+            text-transform: uppercase;
+            color: #fff;
+            cursor: pointer;
+            background-color: #D9D9D9;
+            transition: .3s ease-in-out;
+
+            @include max (600) {
+                &:last-of-type {
+                    border-radius: 0 0 3rem 3rem;
+                }
+            }
+        }
+    
+        &-selection {
+            position: relative;
+            height: fit-content;
+            overflow: hidden;
+        }
+    
+        &-text {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+
+            opacity: 0;
+            visibility: hidden;
+            transition: .3s ease-in-out;
+
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            gap: 3rem;
+        
+            &--active {
+                position: relative;
+                opacity: 1;
+                visibility: visible;
+            }
+        
+            article {
+                max-width: 56.9rem;
+                width: 100%;
+                font-size: 1.4rem;
+                font-weight: 500;
+                line-height: 2.4rem;
+            }
+        
+            figure {
+                max-width: 41.5rem;
+                width: 100%;
+                height: 100%;
+                aspect-ratio: 415/245;
+                border-radius: 3rem;
+                overflow: hidden;
+            
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
+        }
+    }
+
+    &__wrapper {
+        position: relative;
+    }
+
+    &__content {
+        display: flex;
+        flex-wrap: wrap;
+        row-gap: 3.5rem;
+
+        opacity: 0;
+        visibility: hidden;
+        transition: .3s ease-in-out;
+
+        position: absolute;
+        top: 0;
+
+        &--active {
+            opacity: 1;
+            visibility: visible;
+            position: relative;
+        }
+    }
+
+    &__title {
+        font-size: 3rem;
+        font-weight: 800;
+        text-transform: uppercase;
+        width: 100%;
+    }
+
+    &__odss {
+        max-width: calc(100% - 17.6rem);
+        width: 100%;
+        position: relative;
+
+        @include max (600) {
+            max-width: 100%;
+        }
+    }
+
+    &__ods {
+        position: absolute;
+        top: 0;
+        opacity: 0;
+        visibility: hidden;
+        transition: .3s ease-in-out;
+
+        height: 100%;
+        width: 100%;
+
+        border: .1rem solid #D3D3D3;
+        border-radius: 3rem 0 0 3rem;
+        padding: 4.8rem;
+
+        display: flex;
+        flex-direction: column;
+
+        @include max (600) {
+            border-radius: 3rem;
+            overflow: scroll;
+        }
+
+        &--active {
+            position: relative;
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+
+    &__page {
+        position: absolute;
+        top: 0;
+        opacity: 0;
+        visibility: hidden;
+
+        transition: .3s ease-in-out;
+        white-space: break-spaces;
+
+        &--active {
+            position: relative;
+            opacity: 1;
+            z-index: 2;
+            visibility: visible;
+        }
+
+
+        figure {
+            max-height: 7.2rem;
+            height: 100%;
+            max-width: 11rem;
+            width: 100%;
+
+            margin-bottom: 4.7rem;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            svg {
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+            }
+        }
+
+        h3 {
+            font-size: 2.4rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            margin-bottom: 2.3rem;
+
+            & + p:has(strong) {
+                font-size: 1.6rem;
+                font-weight: 600;
+                margin-bottom: 3rem;
+            }
+        }
+
+        h5 {
+            font-size: 1.6rem;
+            font-weight: 700;
+
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            cursor: pointer;
+
+            &::after {
+                content: "";
+                width: 1.5rem;
+                height: 1.5rem;
+                border: .1rem solid #000;
+                border-width: .1rem .1rem 0 0;
+                rotate: 45deg;
+                display: flex;
+                transition: .3s ease-in-out;
+                transform: translate(0, 0rem);
+            }
+        }
+
+        p, ul {
+            font-size: 1.4rem;
+            font-weight: 400;
+            list-style: inside;
+            list-style-type: disc;
+
+            strong {
+                font-weight: 600;
+            }
+        }
+
+        ul {
+            margin-left: 1rem;
+        }
+
+        hr {
+            display: none !important;
+        }
+
+        &-group {
+            margin-top: 3rem;
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+
+            & *:not(h5) {
+                display: none;
+            }
+
+            &--active {
+                *:not(h5) {
+                    display: block;
+                }
+
+                h5::after {
+                    rotate: 135deg;
+                    transform: translate(-1rem, 0rem);
+                }
+            }
+        }
+    }
+
+    &__nav {
+        margin-top: auto;
+        display: flex;
+        justify-content: space-between;
+        gap: 1rem;
+    }
+
+    &__pager {
+        font-size: 1.3rem;
+        font-weight: 800;
+        text-transform: uppercase;
+        cursor: pointer;
+
+        &--disabled {
+            color: #D9D9D9;
+        }
+    }
+
+    &__labels {
+        max-width: 17.6rem;
+        width: 100%;
+
+        @include max (600) {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            max-width: 100%;
+        }
+    }
+
+    &__label {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: .5rem;
+        padding: 1.8rem;
+        font-size: 1.8rem;
+        font-weight: 800;
+        color: #fff;
+        border-radius: 0 3rem 3rem 0;
+        max-width: 16rem;
+        transition: .3s ease-in-out;
+        cursor: pointer;
+
+        @include max (600) {
+            border-radius: 3rem;
+        }
+
+        &:hover:not(&--active) {
+            max-width: 17rem;
+        }
+
+        &--active {
+            max-width: 100%;
+            justify-content: center;
+        }
+    }
+}

@@ -1,0 +1,188 @@
+@import '../abstracts/utilities';
+
+.midia {
+    display: flex;
+    flex-direction: column;
+    gap: 12rem;
+    margin-top: 12.9rem;
+
+    &__header {
+        display: flex;
+        justify-content: space-between;
+        gap: 5rem;
+        flex-wrap: wrap;
+
+        &>span {
+            font-size: 3.6rem;
+            font-weight: 800;
+            text-transform: uppercase;
+        }
+    }
+
+    &__sort {
+        button {
+            display: none;
+        }
+
+        .nice-select {
+            background-color: #F6F6F6;
+            border: .1rem solid #C3C3C3;
+            border-radius: 3rem;
+            padding: 0 4rem;
+            width: 22.5rem;
+            height: 7rem;
+            display: flex;
+            align-items: center;
+
+            &::after {
+                width: 1.7rem;
+                height: 1.7rem;
+                transform: rotate(45deg) translateY(-50%);
+                border-color: #000;
+                border-width: 2px;
+                right: 4rem;
+                top: 50%;
+                transform: rotate(45deg) translateY(-50%);
+                margin-top: -0.5rem;
+            }
+
+            &.open {
+                border-radius: 3rem 3rem 0 0;
+            }
+
+            .current {
+                font-size: 1.6rem;
+                font-weight: 700;
+                text-transform: uppercase;
+            }
+
+            .list {
+                margin: 0;
+                background-color: #F6F6F6;
+                border: .1rem solid #C3C3C3;
+                border-top: 0;
+                box-shadow: none;
+                border-radius: 0 0 3rem 3rem;
+                top: 90%;
+                left: -1px;
+                width: 101%;
+                padding: 0 4rem;
+
+                li {
+                    border-top: .1rem solid #C3C3C3;
+                    font-size: 1.4rem;
+                    font-weight: 500;
+                    padding: 0;
+
+                    &[data-value=""] {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+
+    &__posts {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 13.1rem 4.4rem;
+
+        &:not(:has(~ .midia__carregar)) {
+            margin-bottom: 16.9rem;
+        }
+    }
+
+    &__post {
+        display: flex;
+        flex-direction: column;
+        gap: 2.5rem;
+        max-width: calc(33.33% - 4.4rem);
+        width: 100%;
+        border-radius: 1.2rem;
+        overflow: hidden;
+        border: .1rem solid #E2E2E2;
+        box-shadow: 0 .7rem 1rem rgba(0, 0, 0, 0.25);
+        align-self: stretch;
+
+        @include max (1180) {
+            max-width: calc(50% - 4.4rem);
+        }
+
+        @include max (600) {
+            max-width: 100%;
+        }
+
+        figure {
+            width: 100%;
+            min-height: 23.5rem;
+            height: 23.5rem;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+
+        article {
+            max-width: 27.2rem;
+            width: 90%;
+            margin: 0 auto 3.9rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            font-size: 1.4rem;
+            font-weight: 500;
+            height: 100%;
+            cursor: default;
+
+            @include max (1180) {
+                max-width: 100%;
+            }
+
+            h2 {
+                margin: 1.3rem 0 4.4rem;
+                font-size: 2rem;
+                font-weight: 700;
+                line-height: 2.4rem;
+                display: -webkit-box;
+                -webkit-line-clamp: 3;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+            }
+
+            a {
+                display: flex;
+                align-items: center;
+                gap: 1rem;
+
+                img {
+                    rotate: 180deg;
+                }
+            }
+        }
+    }
+
+    &__carregar {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        padding: 2.5rem 1rem;
+
+        font-size: 1.4rem;
+        font-weight: 800;
+        text-transform: uppercase;
+        color: #fff;
+        background-color: #FF9900;
+
+        appearance: none;
+        border: none;
+        border-radius: 5rem;
+        outline: none;
+        cursor: pointer;
+
+        margin-bottom: 9.8rem;
+    }
+}

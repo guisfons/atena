@@ -1,0 +1,28 @@
+.intro {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 3rem;
+    margin-top: 14.5rem;
+
+    @include max (900) {
+        justify-content: center;
+    }
+    
+    article {
+        font-size: 1.6rem;
+        font-weight: 500;
+        line-height: 2.4rem;
+        max-width: 60.5rem;
+    }
+
+    figure {
+        display: flex;
+        max-width: 35rem;
+
+        img {
+            width: 100%;
+            object-fit: contain;
+        }
+    }
+}

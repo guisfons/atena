@@ -1,0 +1,208 @@
+.banner {
+    position: relative;
+
+    &:not(.banner--home):not(.banner--colorido) {
+        display: flex;
+        align-items: center;
+        height: 60vh;
+
+        figure {
+            position: absolute;
+            height: 100%;
+            width: 100%;
+    
+            &::after {
+                content: '';
+                background-color: rgba(35, 65, 82, .7);
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+            }
+    
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+
+        article {
+            position: relative;
+            z-index: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 4.7rem;
+    
+            h1, span:first-child {
+                color: #fff;
+                font-size: 8rem;
+                font-weight: 700;
+                text-transform: uppercase;
+                line-height: 1;
+                text-shadow: 0 0 .5rem $black;
+
+                @include max (900) {
+                    font-size: 5rem;
+                }
+            }
+    
+            span {
+                font-size: 1.8rem;
+                font-weight: 700;
+                line-height: 3rem;
+                color: #fff;
+                text-transform: uppercase;
+
+                @include max (900) {
+                    font-size: 1.5rem;
+                    font-weight: 700;
+                    line-height: 2.3rem;
+                }
+            }
+        }
+    }
+
+    &--home {
+        display: grid;
+        grid-template-columns: repeat(10, 1fr);
+        grid-template-rows: repeat(5, 1fr);
+        background-color: #000;
+        
+        @include min (1100) {
+            min-height: calc(100vh - 20.6vh);
+        }
+
+        figure {
+            width: 100%;
+            height: 100%;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                opacity: 0;
+                transition: opacity 1s ease-in-out
+            }
+        }
+
+        article {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            font-size: 10rem;
+            font-weight: 800;
+            color: #fff;
+            text-transform: uppercase;
+            text-align: center;
+            line-height: 1;
+
+            @include max (1440) {
+                font-size: 7rem;
+            }
+
+            @include max (1100) {
+                font-size: 5rem;
+            }
+
+            @include max (800) {
+                font-size: 4rem;
+            }
+
+            @include max (600) {
+                font-size: 3rem;
+            }
+
+            @include max (500) {
+                font-size: 2rem;
+            }
+
+            @include max (400) {
+                font-size: 1.7rem;
+            }
+
+            &:first-of-type {
+                grid-area: 2 / 5 / 2 / 7;
+            }
+
+            &:nth-of-type(2) {
+                grid-area: 3 / 4 / 3 / 6;
+                background-color: #501EA0;
+            }
+
+            &:last-of-type {
+                grid-area: 4 / 5 / 4 / 8;
+                background-color: #03702E;
+            }
+        }
+    }
+
+    &--colorido {
+        height: 46.2vh;
+        display: flex;
+
+        .wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1.6rem;
+
+            @include max (900) {
+                justify-content: center;
+            }
+        }
+        
+        figure {
+            max-width: 13.4rem;
+            max-height: 14.8rem;
+            width: 100%;
+            height: 100%;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+            }
+        }
+        
+        h1 {
+            max-width: 86.6rem;
+            width: 100%;
+            font-size: 8rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            color: #fff;
+            text-shadow: 0 0 0.8rem #000;
+
+            @include max (900) {
+                font-size: 4rem;
+            }
+        }
+    }
+
+    &__text {
+        background-color: #EA2843;
+
+        span {
+            display: none;
+
+            &.active {
+                display: inline;
+
+                &:not(.typing) {
+                    border-right: .2rem solid;
+                    animation: caret 1s steps(1) infinite;
+                }
+            }
+
+            &.typing {
+                  border-right: .2rem solid;
+                  animation: caret 1s steps(1) infinite;
+            }
+        }
+    }
+}

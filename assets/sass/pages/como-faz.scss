@@ -1,0 +1,179 @@
+@import '../abstracts/utilities';
+@import '../page-modules/o-que-como-faz';
+
+.intro {
+    margin-bottom: 5.9rem;
+    align-items: center;
+
+    article {
+        white-space: break-spaces;
+
+        h2 {
+            font-size: 2rem;
+        }
+    }
+}
+
+.destaque {
+    &__heading {
+        max-width: 71.5rem;
+        margin-bottom: 5.5rem;
+
+        span:first-of-type {
+            font-size: 4rem;
+            font-weight: 800;
+            line-height: 5rem;
+            text-transform: uppercase;
+            white-space: normal;
+            color: #96CAE4;
+            text-shadow: 0 0 .5rem #000;
+        }
+
+        span:last-of-type {
+            color: #000;
+            font-size: 7.2rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            text-shadow: initial;
+        }
+    }
+
+    &__content {
+        white-space: break-spaces;
+
+        p {
+            max-width: 59.4rem;
+            width: 100%;
+
+            &:last-of-type, &:not(:last-of-type) {
+                margin: 0;
+            }
+        }
+    }
+}
+
+.diferenciais {
+    display: flex;
+    flex-direction: column;
+    gap: 15.1rem;
+    margin-top: 13.2rem;
+
+    article {
+        font-size: 1.6rem;
+        font-weight: 500;
+
+        h2 {
+            font-size: 3.6rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            margin-bottom: 4.7rem;
+        }
+
+        ul {
+            white-space: break-spaces;
+        
+            li {
+                display: flex;
+                align-items: flex-start;
+                gap: .6rem;
+        
+                &::before {
+                    content: '';
+                    background-image: url('../img/checklist.webp');
+                    background-size: contain;
+                    background-repeat: no-repeat;
+                    min-width: 2.2rem;
+                    min-height: 2.4rem;
+                }
+            }
+        }
+    }
+}
+
+.diferenciais__box {
+    display: flex;
+
+    @include max (800) {
+        flex-direction: column;
+    }
+
+    article {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 32.5rem;
+        padding: 2rem;
+        font-size: 1.4rem;
+        font-weight: 800;
+        line-height: 2.1rem;
+        flex: 1;
+        max-width: 20%;
+        width: 100%;
+        position: relative;
+
+        @include max (800) {
+            max-width: 100%;
+            min-height: 10rem;
+        }
+    
+        &:first-of-type {
+            border-radius: 3rem 0 0 3rem;
+
+            @include max (800) {
+                border-radius: 3rem 3rem 0 0;
+            }
+        }
+    
+        &:last-of-type {
+            border-radius: 0 3rem 3rem 0;
+
+            @include max (800) {
+                border-radius: 0 0 3rem 3rem;
+            }
+        }
+    
+        &:not(:last-of-type) {
+            border-right: 0.3rem solid #fff;
+
+            @include max (800) {
+                border-right: 0;
+                border-bottom: .3rem solid #fff;
+            }
+    
+            span:last-of-type {
+                clip-path: polygon(0 0, 0% 100%, 50% 50%);
+                width: 3.5rem;
+                height: 3.5rem;
+                position: absolute;
+                z-index: 1;
+                right: -3.5rem;
+                background-color: #fff;
+
+                @include max (800) {
+                    left: 50%;
+                    right: initial;
+                    bottom: -3.5rem;
+                    rotate: 90deg;
+                }
+    
+                &::after {
+                    content: '';
+                    clip-path: polygon(0 0, 0% 100%, 50% 50%);
+                    position: absolute;
+                    right: .3rem;
+                    width: 3.5rem;
+                    height: 3.5rem;
+
+                    @include max (800) {
+                        right: 0.4rem;
+                        bottom: 0;
+                    }
+                }
+            }
+        }
+    
+        &:not(:first-of-type) {
+            padding-left: 4rem;
+        }
+    }
+}

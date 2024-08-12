@@ -1,0 +1,38 @@
+@mixin min($screen) {
+    @media only screen and (min-width: $screen+"px") {
+        @content;
+    }
+}
+
+@mixin max($screen) {
+    @media only screen and (max-width: $screen+"px") {
+        @content;
+    }
+}
+
+.mobile-only {
+    @include min(801) {
+        display: none !important;
+    }
+}
+
+.desktop-only {
+    @include max(800) {
+        display: none !important;
+    }
+}
+
+@keyframes caret {
+    50% {
+        border-color: transparent;
+    }
+}
+
+@keyframes scrollText {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}

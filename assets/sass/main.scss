@@ -1,0 +1,15 @@
+@import 'abstracts/variables';
+@import 'abstracts/fonts';
+@import 'abstracts/utilities';
+
+@import 'base/reset';
+@import 'base/smoothscroll';
+
+@import 'components/banner';
+@import 'components/sliders';
+@import 'components/cases-projetos';
+@import 'components/orcamento';
+@import 'components/intro';
+
+@import 'layout/footer';
+@import 'layout/header';

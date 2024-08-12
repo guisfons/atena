@@ -1,0 +1,86 @@
+@import '../abstracts/utilities';
+@import '../page-modules/o-que-como-faz';
+
+.p-mercado {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5.7rem;
+    margin: 14.4rem auto 16.4rem;
+
+    @include max (1000) {
+        justify-content: center;
+    }
+
+    & > article {
+        max-width: 66.6rem;
+        font-size: 1.6rem;
+        font-weight: 500;
+        line-height: 2.4rem;
+        white-space: break-spaces;
+    }
+
+    h2 {
+        font-size: 3.6rem;
+        font-weight: 800;
+        text-transform: uppercase;
+
+        & + pre {
+            font-family: inherit;
+            font-size: 2.4rem;
+            font-weight: 800;
+            line-height: 3rem;
+            white-space: break-spaces;
+        }
+    }
+
+    &__container {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 6rem;
+    }
+
+    &__card {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 32rem;
+        border-radius: 3rem;
+        gap: 11rem;
+        padding: 3rem;
+
+        @include max (600) {
+            flex-direction: column;
+        }
+
+        article {
+            font-size: 2rem;
+            font-weight: 600;
+            line-height: 3rem;
+            color: #fff;
+            max-width: 54.5rem;
+
+            @include max (600) {
+                text-align: center;
+            }
+
+            a {
+                background-color: #FF9900;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                max-width: 32.5rem;
+                border-radius: 5rem;
+                white-space: nowrap;
+                font-size: 1.4rem;
+                font-weight: 700;
+                padding: 2.5rem 3.5rem;
+                margin-top: 3.6rem;
+
+                @include max (600) {
+                    margin: 3.6rem auto 0;
+                }
+            }
+        }
+    }
+}

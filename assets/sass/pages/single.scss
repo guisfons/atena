@@ -1,0 +1,156 @@
+@import '../abstracts/utilities';
+
+.content {
+    display: flex;
+    flex-direction: column;
+    margin-top: 8.7rem;
+
+    &__header {
+        display: flex;
+        justify-content: space-between;
+
+        time, a {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            font-size: 1.4rem;
+            font-weight: 500;
+
+            img {
+                max-width: 3rem;
+                height: 3rem;
+                object-fit: contain;
+            }
+        }
+    }
+
+    &__content {
+        white-space: break-spaces;
+        font-size: 1.6rem;
+        line-height: 2.4rem;
+
+        & > img {
+            max-width: 50rem;
+            width: 100%;
+            height: auto;
+
+            display: block;
+            margin: 0 auto;
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        p, ul, li, a, em, strong {
+            font-size: 1.6rem;
+        }
+
+        li {
+            margin-left: 2rem;
+        }
+    }
+
+    &__title {
+        font-size: 4.8rem;
+        font-weight: 700;
+        line-height: 1;
+    }
+
+    &__figure {
+        max-width: 75rem;
+        width: 100%;
+
+        img {
+            width: 100%;
+            height: auto;
+        }
+    }
+
+    &__share {
+        display: flex;
+        align-items: center;
+        gap: 1.9rem;
+        font-size: 1.6rem;
+        font-weight: 800;
+        margin-bottom: 10rem;
+    }
+
+    &__related {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        column-gap: 3rem;
+        margin-bottom: 14.2rem;
+
+        & > span {
+            margin-bottom: 10rem;
+            width: 100%;
+            font-size: 3.6rem;
+            font-weight: 800;
+            text-transform: uppercase;
+        }
+
+        &-post {
+            display: flex;
+            max-width: 48.5rem;
+            width: 100%;
+            height: 16.5rem;
+
+            @include max (900) {
+                &:not(:last-of-type) {
+                    margin-bottom: 3rem;
+                }
+            }
+
+            figure {
+                max-width: 25.5rem;
+                width: 100%;
+                border-radius: 1.6rem 0 0 1.6rem;
+                overflow: hidden;
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
+
+            article {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                gap: 3rem;
+                padding: 2.8rem;
+                width: 100%;
+                overflow: hidden;
+                border-radius: 0 1.6rem 1.6rem 0;
+
+                box-shadow: .4rem .2rem .5rem rgba(0, 0, 0, .25);
+
+                span {
+                    font-size: 1.2rem;
+                    font-weight: 700;
+
+                    display: -webkit-box;
+                    -webkit-line-clamp: 3;
+                    -webkit-box-orient: vertical;
+                }
+
+                a {
+                    display: flex;
+                    align-items: center;
+                    gap: .7rem;
+
+                    font-size: 1.2rem;
+                    font-weight: 500;
+
+                    img {
+                        rotate: 180deg;
+                    }
+                }
+            }
+        }
+    }
+}

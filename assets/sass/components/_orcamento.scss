@@ -1,0 +1,79 @@
+.orcamento {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 6rem;
+    margin: 18rem auto;
+
+    @include max (900) {
+        justify-content: center;
+        text-align: center;
+    }
+
+    article {
+        white-space: break-spaces;
+        display: flex;
+        flex-direction: column;
+        font-size: 1.6rem;
+        font-weight: 500;
+        line-height: 2.4rem;
+        max-width: 36.5rem;
+        width: 100%;
+
+        @include max (900) {
+            max-width: 100%;
+        }
+
+        a {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-transform: uppercase;
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: #fff;
+            background-color: #FF9900;
+            max-width: 32.5rem;
+            width: 100%;
+            border-radius: 5rem;
+            padding: 2.5rem;
+
+            @include max (900) {
+                margin: 0 auto;
+            }
+        }
+    }
+
+    figure {
+        max-width: 50rem;
+        width: 100%;
+    }
+
+    &__destaque {
+        display: flex;
+        flex-direction: column;
+        margin: 4.4rem 0;
+    
+        span {
+            &:first-of-type {
+                font-size: 2.4rem;
+                font-weight: 800;
+                text-transform: uppercase;
+                line-height: 1;
+            }
+    
+            &:last-of-type {
+                font-size: 10rem;
+                font-weight: 800;
+                color: #fff;
+                text-shadow: 0 0 0.3rem #000;
+                line-height: 1;
+
+                @include max (500) {
+                    font-size: 7rem;
+                }
+            }
+        }
+    }
+}

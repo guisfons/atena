@@ -1,0 +1,158 @@
+@import '../abstracts/utilities';
+
+.contact {
+    &__content {
+        display: flex;
+        flex-wrap: wrap;
+        white-space: break-spaces;
+        margin-top: 9.3rem;
+        gap: 5rem 5.3rem;
+
+        & > h2 {
+            width: 100%;
+            font-size: 3.6rem;
+            font-weight: 800;
+            text-transform: uppercase;
+
+            @include max (900) {
+                font-size: 2.6rem;
+            }
+        }
+
+        & > p {
+            width: 100%;
+            font-size: 2.4rem;
+            font-weight: 500;
+        }
+    }
+
+    &__card {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        max-width: calc(50% - 5.3rem);
+        width: 100%;
+        aspect-ratio: 1;
+        border-radius: 3rem;
+        overflow: hidden;
+
+        @include max (600) {
+            max-width: 100%;
+        }
+
+        figure {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+
+            &::after {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba($color: #444444, $alpha: .3);
+            }
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+
+        span {
+            position: relative;
+            font-size: 3rem;
+            font-weight: 800;
+
+            max-width: 20rem;
+            width: 90%;
+
+            color: #fff;
+            text-transform: uppercase;
+            text-align: center;
+        }
+    }
+
+    &__form {
+        width: 100%;
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 4.1rem;
+            width: 100%;
+
+            p {
+                display: flex;
+
+                &:has(.wpcf7-spinner) {
+                    flex-direction: column;
+                }
+            }
+
+            label {
+                display: flex;
+                flex-direction: column;
+                gap: 2.7rem;
+                font-size: 2rem;
+                font-weight: 700;
+                width: 100%;
+
+                span:not(.wpcf7-form-control-wrap) {
+                    margin-left: 3rem;
+                }
+
+                input, textarea {
+                    width: 100%;
+                    border-radius: 3rem;
+                    border: .1rem solid #C3C3C3;
+                    appearance: none;
+                    background-color: #F6F6F6;
+                    padding: 2.7rem 3rem;
+                    font-size: 1.6rem;
+                    font-weight: 500;
+                    outline: none;
+                    font-family: inherit;
+
+                    &::placeholder {
+                        font-size: 1.6rem;
+                        font-weight: 500;
+                    }
+                }
+
+                textarea {
+                    resize: none;
+                    max-height: 28.5rem;
+                }
+            }
+
+            input[type="submit"] {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                max-width: 40rem;
+                width: 100%;
+                margin-left: auto;
+
+                border-radius: 5rem;
+                background-color: #FF9900;
+
+                font-size: 2rem;
+                font-weight: 800;
+                text-transform: uppercase;
+                color: #fff;
+
+                outline: none;
+                border: none;
+                padding: 2.8rem;
+                cursor: pointer;
+            }
+        }
+    }
+}

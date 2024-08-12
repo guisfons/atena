@@ -1,0 +1,297 @@
+@import '../abstracts/utilities';
+
+.banner span {
+    max-width: 73.8rem;
+}
+
+.oqe-atena {
+    margin: 13.5rem auto 9.3rem;
+    max-width: 1150px;
+    display: flex;
+    flex-direction: column;
+    gap: 9.3rem;
+
+    @include max (900) {
+        margin: 5rem auto;
+    }
+
+    &__box {
+        padding: 3.8rem 5.7rem;
+        border-radius: 3rem;
+        background-size: cover;
+        background-position: center center;
+
+        @include max (900) {
+            padding: 2rem;
+        }
+
+        article {
+            font-size: 1.6rem;
+            font-weight: 500;
+            line-height: 2rem;
+            color: #fff;
+            max-width: 46rem;
+            width: 100%;
+            margin-left: auto;
+            white-space: break-spaces;
+        }
+    }
+}
+
+.mvv {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5.6rem;
+
+    @include max (900) {
+        gap: 1rem;
+    }
+
+    article {
+        flex: 1;
+        min-width: 30rem;
+        white-space: break-spaces;
+        font-size: 1.4rem;
+        line-height: 2.4rem;
+
+        h3 {
+            font-size: 2rem;
+            font-weight: 800;
+        }
+    }
+}
+
+.ornamento {
+    max-width: 70.4rem;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.s-fundador {
+    background-color: #E2E2E2;
+    padding-top: 5.5rem;
+
+    .wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 4rem;
+        position: relative;
+        padding-bottom: 7.8rem;
+
+        @include max (900) {
+            padding-bottom: 0;
+        }
+    }
+
+    &__heading {
+        width: 100%;
+
+        span {
+            display: flex;
+            flex-direction: column;
+            text-transform: uppercase;
+
+            &:first-of-type {
+                font-size: 3.6rem;
+                font-weight: 700;
+                color: #E2E2E2;
+                text-shadow: 0 0 .5rem #000;
+            }
+        
+            &:last-of-type {
+                font-size: 4.8rem;
+                font-weight: 800;
+            }
+        }
+    }
+
+    article {
+        font-size: 1.4rem;
+        font-weight: 500;
+        position: relative;
+        z-index: 1;
+        max-width: 69rem;
+        width: 100%;
+    }
+
+    ul {
+        white-space: break-spaces;
+
+        li {
+            display: flex;
+            align-items: center;
+            gap: .6rem;
+
+            &::before {
+                content: '';
+                background-image: url('../img/checklist.webp');
+                background-size: contain;
+                background-repeat: no-repeat;
+                min-width: 1.4rem;
+                min-height: 1.4rem;
+            }
+
+            &:has(pre) {
+                flex-wrap: wrap;
+            }
+            
+            pre {
+                margin-left: 2rem;
+                width: 100%;
+                
+                white-space: break-spaces;
+                font-family: inherit;
+                font-size: 1.2rem;
+                font-weight: 300;
+                font-style: italic;
+                line-height: 2.4rem;
+            }
+        }
+    }
+
+    figure {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        max-width: 35rem;
+        display: flex;
+
+        @include max (900) {
+            position: relative;
+            margin: 0 auto;
+        }
+    }
+}
+
+.c-administrativo {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 7.6rem 7.3rem;
+    margin: 16rem auto;
+    
+    @include max (900) {
+        text-align: center;
+        gap: 3rem 7.3rem;
+        margin: 5rem auto;
+    }
+
+    h2 {
+        font-size: 3.6rem;
+        font-weight: 800;
+        text-transform: uppercase;
+        width: 100%;
+
+        @include max (900) {
+            font-size: 2.6rem;
+        }
+    }
+
+    a {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        &:hover {
+            figure {
+                &::after, &::before {
+                    opacity: 1 !important;
+                    visibility: visible !important;
+                }
+            }
+        }
+
+        span {
+            padding: 1.2rem;
+            background-color: #D9D9D9;
+            border-radius: 1.5rem;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            max-width: 16rem;
+            width: 95%;
+            text-align: center;
+            margin-top: -2rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        figure {
+            width: 20rem;
+            height: 20rem;
+            border-radius: 1rem;
+            overflow: hidden;
+            position: relative;
+
+            &::after, &::before {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                z-index: 2;
+
+                opacity: 0;
+                visibility: hidden;
+                transition: .3s ease-in-out;
+            }
+
+            &::after {
+                content: '';
+                width: 100%;
+                height: 100%;
+                background-color: rgba($color: #323232, $alpha: .75);
+            }
+
+            &::before {
+                content: '';
+                background-image: url('../img/linkedin_logow.webp');
+                background-position: center center;
+                background-repeat: no-repeat;
+                width: 5.3rem;
+                aspect-ratio: 1;
+
+                left: 50%;
+                transform: translateX(-50%);
+                z-index: 3;
+            }
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+    }
+}
+
+.c-ecossistema {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 7.5rem;
+    margin-bottom: 5rem;
+    
+    @include max (900) {
+        text-align: center;
+    }
+
+    h2 {
+        width: 100%;
+        font-size: 3.6rem;
+        font-weight: 800;
+        text-transform: uppercase;
+
+        @include max (900) {
+            font-size: 2.6rem;
+        }
+    }
+
+    figure {
+        max-width: calc(25% - 7.5rem);
+        width: 100%;
+
+        @include max (900) {
+            max-width: calc(50% - 7.5rem);
+        }
+    }
+}
