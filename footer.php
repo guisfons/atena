@@ -34,9 +34,22 @@ if($imagem_orcamento) :
     </section>';
 endif;
 ?>
-
 </main>
 <footer class="footer">
+    <?php
+    $colors = array();
+    if( have_rows('ods', 'option') ):
+        while( have_rows('ods', 'option') ): the_row();
+            $color = get_sub_field('cor');
+            $colors[] = $color;
+        endwhile;
+    endif;
+
+    if( !empty($colors) ):
+        $random_color = $colors[array_rand($colors)];
+    endif;
+    ?>
+    <div class="footer__loading footer__loading--active" style="background-color: <?php echo esc_attr( $random_color ); ?>"><figure><img src="<?php echo esc_url(get_field('logo', 'option')['url']); ?>" alt="<?php echo get_the_title(); ?>"></figure></div>
     <div class="wrapper footer__content">
         <?php
         $cor_destaque = get_field('cor_destaque', 'options');

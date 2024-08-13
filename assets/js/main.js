@@ -1,5 +1,7 @@
 window.addEventListener('DOMContentLoaded', function(){
     header()
+
+    document.querySelector('.footer__loading').classList.remove('footer__loading--active')
     
     if(document.querySelector('.banner--home')) {
         banner()

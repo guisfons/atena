@@ -94,4 +94,41 @@
         }
     }
     
+    &__loading {
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 9999;
+
+        width: 0;
+        height: 100vh;
+        background-color: #1b7657;
+        transition: 2s ease-in-out;
+        opacity: 0;
+        visibility: hidden;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        &--active {
+            width: 100vw;
+            opacity: 1;
+            visibility: visible;
+        }
+
+        figure {
+            position: absolute;
+            min-width: 20rem;
+            min-height: 20rem;
+
+            animation: rotate 5s linear infinite;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+            }
+        }
+    }
 }
