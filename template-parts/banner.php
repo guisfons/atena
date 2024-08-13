@@ -22,7 +22,7 @@ if (is_front_page()) {
         $x = 1;
         shuffle($images);
         foreach ($images as $image) :
-            if ($x <= 43) {
+            if ($x <= 42) {
                 echo '<figure data-id="' . $x . '"><img src data-src="' . esc_url($image['url']) . '" alt="' . esc_attr($image['alt']) . '"></figure>';
             }
             $x++;
