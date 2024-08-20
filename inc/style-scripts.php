@@ -1,5 +1,5 @@
 <?php
-define('ASSETS_VERSION','1');
+define('ASSETS_VERSION','1.2');
 
 /**
  * Enqueue scripts and styles that are used on every page

@@ -9,6 +9,10 @@
         background-color: #3DD4DE;
         overflow: hidden;
 
+        @include max (600) {
+            padding-top: 3rem;
+        }
+
         .wrapper {
             display: flex;
             flex-direction: column;
@@ -20,6 +24,11 @@
                 font-size: 2.8rem;
                 font-weight: 700;
                 text-transform: uppercase;
+
+                @include max (600) {
+                    line-height: 1.2;
+                }
+
             }
 
             &:last-of-type {

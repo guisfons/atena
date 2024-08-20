@@ -91,7 +91,6 @@ function pagination() {
         if(e.closest('.objetivos__ods').querySelector('.objetivos__page--active').dataset.page == 1) {
             e.closest('.objetivos__nav').querySelector('.objetivos__pager--prev').classList.add('objetivos__pager--disabled')
         }
-
         
         e.addEventListener('click', function() {
             let pages = this.closest('.objetivos__ods').querySelectorAll('.objetivos__page').length

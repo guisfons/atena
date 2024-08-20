@@ -211,6 +211,7 @@
 
         @include max (600) {
             max-width: 100%;
+            order: 1;
         }
     }
 
@@ -233,7 +234,7 @@
 
         @include max (600) {
             border-radius: 3rem;
-            overflow: scroll;
+            overflow-x: auto;
         }
 
         &--active {
@@ -380,7 +381,7 @@
 
         @include max (600) {
             display: flex;
-            flex-wrap: wrap;
+            overflow-x: scroll;
             gap: 1rem;
             max-width: 100%;
         }
@@ -402,6 +403,8 @@
 
         @include max (600) {
             border-radius: 3rem;
+            min-width: fit-content;
+            opacity: 0.4;
         }
 
         &:hover:not(&--active) {
@@ -411,6 +414,7 @@
         &--active {
             max-width: 100%;
             justify-content: center;
+            opacity: 1;
         }
     }
 }

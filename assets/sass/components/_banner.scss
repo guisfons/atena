@@ -74,9 +74,22 @@
             min-height: calc(100vh - 20.6vh);
         }
 
+        @include max (600) {
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(5, 1fr);
+            height: calc(5 * 1fr);
+            overflow: hidden;
+        }
+
         figure {
             width: 100%;
             height: 100%;
+
+            @include max (600) {
+                &:nth-of-type(n + 14) {
+                    display: none;
+                }
+            }
 
             img {
                 width: 100%;
@@ -112,30 +125,30 @@
                 font-size: 4rem;
             }
 
-            @include max (600) {
-                font-size: 3rem;
-            }
-
-            @include max (500) {
-                font-size: 2rem;
-            }
-
-            @include max (400) {
-                font-size: 1.7rem;
-            }
-
             &:first-of-type {
                 grid-area: 2 / 5 / 2 / 8;
+
+                @include max (600) {
+                    grid-area: 2 / 2 / 2 / 4;
+                }
             }
 
             &:nth-of-type(2) {
                 grid-area: 3 / 4 / 3 / 6;
                 background-color: #501EA0;
+
+                @include max (600) {
+                    grid-area: 3 / 2 / 3 / 4;
+                }
             }
 
             &:last-of-type {
                 grid-area: 4 / 5 / 4 / 8;
                 background-color: #03702E;
+
+                @include max (600) {
+                    grid-area: 4 / 2 / 4 / 4;
+                }
             }
         }
     }
@@ -162,6 +175,10 @@
             width: 100%;
             height: 100%;
 
+            @include max (900) {
+                position: absolute;
+            }
+
             img {
                 width: 100%;
                 height: 100%;
@@ -172,14 +189,16 @@
         h1 {
             max-width: 86.6rem;
             width: 100%;
-            font-size: 8rem;
+            font-size: 4rem;
             font-weight: 800;
             text-transform: uppercase;
             color: #fff;
             text-shadow: 0 0 0.8rem #000;
 
             @include max (900) {
-                font-size: 4rem;
+                position: relative;
+                z-index: 1;
+                text-align: center;
             }
         }
     }
