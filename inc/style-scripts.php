@@ -106,6 +106,7 @@ function enqueueTargetAssets($page) {
         "filantropia" => ["javascripts" => [], "css" => ["filantropia.min.css"], "type" => "page", "concat" => true],
         "para-quem-faz" => ["javascripts" => ["para-quem-faz.js"], "css" => ["para-quem-faz.min.css"], "type" => "page", "concat" => true],
         "contas-energia" => ["javascripts" => [], "css" => ["contact.min.css", "contas-de-energia.min.css"], "type" => "page", "concat" => true],
+        "engenharia-tributaria" => ["javascripts" => [], "css" => ["contact.min.css", "engenharia-tributaria.min.css"], "type" => "page", "concat" => true],
     );
 
     if (property_exists($pageAssetsConfig, $page)) {
