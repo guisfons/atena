@@ -104,7 +104,7 @@
                 font-weight: 700;
                 width: 100%;
 
-                span:not(.wpcf7-form-control-wrap) {
+                & > span:not(.wpcf7-form-control-wrap) {
                     margin-left: 3rem;
                 }
 

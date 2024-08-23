@@ -8,7 +8,23 @@
      */
 
     get_header();
+	get_template_part('template-parts/banner');
+    ?>
 
-    the_content();
+    <section class="wrapper contact">
+        <div class="contact__content">
+            <h2>Do cliente físico:</h2>
+        </div>
+        <div class="contact__form">
+            <?php echo do_shortcode('[contact-form-7 id="'. get_field('formulario_do_cliente_fisico')[0] .'"]'); ?>
+        </div>
 
-    get_footer();
+        <div class="contact__content">
+            <h2>Do cliente jurídico:</h2>
+        </div>
+        <div class="contact__form">
+            <?php echo do_shortcode('[contact-form-7 id="'. get_field('formulario_do_cliente_juridico')[0] .'"]'); ?>
+        </div>
+    </section>
+
+<?php get_footer();
